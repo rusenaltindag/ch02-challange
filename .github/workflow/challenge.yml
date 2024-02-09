@@ -1,0 +1,30 @@
+name: Challenges on Different Platforms
+
+on: push
+
+jobs:
+    job1:
+        name: Run on Ubuntu Latest
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get the Date info
+              run: date
+    job2:
+        name: Run on Windows Latest
+        runs-on: windows-latest
+        steps:
+            - name: Get the Date info
+              run: date
+    job3:
+        name: Run on MacOS Latest
+        runs-on: macos-latest
+        steps:
+            - name: Get the Date info
+              run: date 
+    job4: 
+        name: Run on Ubuntu 20.04
+        runs-on: ubuntu-20.04
+        needs: [job1, job2, job3]
+        steps: 
+          - name: Get the Date info
+            run: date
